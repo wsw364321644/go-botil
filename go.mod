@@ -1,6 +1,6 @@
-module github.com/OBOT/go-botil
+module github.com/wsw364321644/go-botil
 
-go 1.12
+go 1.13
 
 require (
 	github.com/bitly/go-simplejson v0.5.0
