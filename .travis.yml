@@ -1,0 +1,17 @@
+language: go
+go_import_path: github.com/wsw364321644/go-botil
+go:
+    - 1.6.x
+    - 1.7.x
+    - 1.8.x
+    - 1.9.x
+    - 1.10.x
+    - tip
+sudo: false
+install:
+    - go get -v  github.com/bitly/go-simplejson
+    - go get -v  github.com/mitchellh/go-ps
+    - go get -v  github.com/pkg/sftp
+    - go get -v  github.com/satori/go.uuid
+    - go get -v  github.com/urfave/negroni
+    - go get -v  golang.org/x/crypto
