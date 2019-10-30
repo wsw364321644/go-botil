@@ -145,7 +145,7 @@ func UploadFile(client *sftp.Client,srcFilePath,desDir string)error{
 			break
 		}
 		readsize+=int64(n)
-		dstFile.Write(buf)
+		dstFile.Write(buf[0:n])
 	}
 	readsize=state.Size()
 	<-end
