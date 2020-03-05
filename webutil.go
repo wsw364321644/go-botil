@@ -38,8 +38,12 @@ func HttpLLErrorRespond(w http.ResponseWriter ,httpcode int,err error){
 	json:=simplejson.New()
 	llerr,ok:=err.(*LLError)
 	var errcode int32 = 1
+	var msg string
 	if(ok) {
 		errcode=llerr.Code()
+		msg=llerr.Message()
+	}else{
+		msg=err.Error()
 	}
 	json.Set("code",httpcode)
 	switch httpcode {
@@ -59,7 +63,7 @@ func HttpLLErrorRespond(w http.ResponseWriter ,httpcode int,err error){
 	if(httpcode!=200){
 		w.WriteHeader(httpcode)
 		json.Set("errorCode",errcode)
-		json.Set("errorMessage",err.Error())
+		json.Set("errorMessage",msg)
 	}
 	b,_:=json.Encode()
 	w.Write(b)
