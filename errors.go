@@ -13,6 +13,19 @@ func CloseErrorStack(){
 func NewError(text string,code int32) *LLError {
 	return &LLError{&text,code,[]byte{}}
 }
+
+func IsErrorEqual(lerr error,rerr error)bool{
+	lll,lok:=lerr.(*LLError)
+	rll,rok:=rerr.(*LLError)
+	if lok!=rok{
+		return false
+	}else if lok{
+		return lll.Code()==rll.Code()
+	}else{
+		return  lerr.Error()==rerr.Error()
+	}
+}
+
 func ConvertError(err error) error {
 	if(err==nil){
 		return nil
