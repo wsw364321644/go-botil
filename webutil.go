@@ -2,6 +2,7 @@ package botil
 
 import (
 	"github.com/bitly/go-simplejson"
+	"github.com/tidwall/sjson"
 	"github.com/urfave/negroni"
 	"net/http"
 )
@@ -32,6 +33,25 @@ func HttpJsonRespond(w http.ResponseWriter,json *simplejson.Json ,httpcode int,e
 	}
 	b,_:=json.Encode()
 	w.Write(b)
+}
+
+func HttpJsonStrRespond(w http.ResponseWriter,rootstr string ,httpcode int,errcode int32,errmsg string){
+	sjson.Set(rootstr,"code",httpcode)
+	switch httpcode {
+	case 200:
+		sjson.Set(rootstr,"status","ok")
+	case 400:
+		sjson.Set(rootstr,"status","badrequest")
+	case 500:
+		sjson.Set(rootstr,"status","servererror")
+	}
+	w.Header().Set("content-type","application/json; charset=utf-8")
+	if(httpcode!=200){
+		w.WriteHeader(httpcode)
+		sjson.Set(rootstr,"errorCode",errcode)
+		sjson.Set(rootstr,"errorMessage",errmsg)
+	}
+	w.Write([]byte(rootstr))
 }
 
 func HttpLLErrorRespond(w http.ResponseWriter ,httpcode int,err error){
