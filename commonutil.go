@@ -19,7 +19,38 @@ func GetArrayElemWithDefault(array interface{},index int,defaultValue interface{
 	}
 }
 
-
+const (
+	UID = 501
+	GUID = 100
+)
+//func StartProcess (file string) {
+//	var cred =  &syscall.Credential{ UID, GUID, []uint32{} }
+//	// the Noctty flag is used to detach the process from parent tty
+//	var sysproc = &syscall.SysProcAttr{  Credential:cred, Noctty:true }
+//	var attr = os.ProcAttr{
+//		Dir: ".",
+//		Env: os.Environ(),
+//		Files: []*os.File{
+//			os.Stdin,
+//			nil,
+//			nil,
+//		},
+//		Sys:sysproc,
+//
+//	}
+//	process, err := os.StartProcess(file, []string{"/bin/sleep", "100"}, &attr)
+//	if err == nil {
+//
+//		// It is not clear from docs, but Realease actually detaches the process
+//		err = process.Release();
+//		if err != nil {
+//			fmt.Println(err.Error())
+//		}
+//
+//	} else {
+//		fmt.Println(err.Error())
+//	}
+//}
 
 func CloseProcess(processname string){
 	processes,err:=ps.Processes()
