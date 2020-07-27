@@ -18,4 +18,5 @@ require (
 	github.com/urfave/negroni v1.0.0
 	golang.org/x/crypto v0.0.0-20190530122614-20be4c3c3ed5
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
+	golang.org/x/sys latest
 )
