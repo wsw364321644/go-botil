@@ -8,7 +8,7 @@ require (
 	github.com/kr/fs v0.1.0 // indirect
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/mitchellh/go-ps v0.0.0-20170309133038-4fdf99ab2936
-	github.com/pkg/errors v0.8.1
+	github.com/pkg/errors v0.8.1 // indirect
 	github.com/pkg/sftp v1.10.0
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/satori/go.uuid v1.2.0
@@ -17,6 +17,6 @@ require (
 	github.com/tidwall/sjson v1.0.4
 	github.com/urfave/negroni v1.0.0
 	golang.org/x/crypto v0.0.0-20190530122614-20be4c3c3ed5
+	golang.org/x/sys v0.0.0-20200905004654-be1d3432aa8f
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
-	golang.org/x/sys latest
 )
