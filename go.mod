@@ -14,8 +14,8 @@ require (
 	github.com/tidwall/gjson v1.14.4
 	github.com/tidwall/sjson v1.2.5
 	github.com/urfave/negroni v1.0.0
-	golang.org/x/crypto v0.6.0
-	golang.org/x/sys v0.5.0
+	golang.org/x/crypto v0.17.0
+	golang.org/x/sys v0.15.0
 )
 
 require (
